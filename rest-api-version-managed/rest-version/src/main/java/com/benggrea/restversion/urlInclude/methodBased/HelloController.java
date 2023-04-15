@@ -1,4 +1,4 @@
-package com.benggrea.restversion.case1;
+package com.benggrea.restversion.urlInclude.methodBased;
 
 import com.benggrea.restversion.service.NewVersionService;
 import com.benggrea.restversion.service.OldVersionService;
