@@ -4,7 +4,6 @@ package com.benggrea.restversion.mime;
 import com.benggrea.restversion.service.NewVersionService;
 import com.benggrea.restversion.service.OldVersionService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
