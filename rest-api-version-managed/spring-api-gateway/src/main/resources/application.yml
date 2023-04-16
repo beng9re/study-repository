@@ -1,0 +1,23 @@
+server:
+  port: 80
+
+spring:
+  cloud:
+    gateway:
+
+      routes:
+        - id: v1-api
+          uri: http://localhost:8081
+          predicates:
+            - Path=/v1/**
+          filters:
+            - RewritePath=/v1/(?<path>.*), /$\{path}
+        - id: v2-api
+          uri: http://localhost:8083
+          predicates:
+            - Path=/v2/**
+          filters:
+            - RewritePath=/v2/(?<path>.*), /$\{path}
+logging:
+  level:
+    root: debug
