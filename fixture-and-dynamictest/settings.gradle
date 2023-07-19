@@ -1,0 +1,6 @@
+rootProject.name = 'fixture-and-dynamictest'
+include 'fixture'
+include 'dynamicTest'
+include 'Car'
+include 'order'
+

@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '8.1.0'
+    id 'java-test-fixtures'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.freefair.lombok'
+    apply plugin: 'java-test-fixtures'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.28'
+        annotationProcessor 'org.projectlombok:lombok:1.18.28'
+        testCompileOnly 'org.projectlombok:lombok:1.18.28'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+dependencies {
+    implementation project(':order')
+    implementation project(':dynamicTest')
+}
+
+project(':dynamicTest') {
+    dependencies {
+        implementation project(':order')
+        testImplementation(testFixtures(project(':Car')))
+    }
+}
+
+project(':order') {
+    dependencies {
+        implementation project(':Car')
+        testImplementation(testFixtures(project(':Car')))
+    }
+}
+
