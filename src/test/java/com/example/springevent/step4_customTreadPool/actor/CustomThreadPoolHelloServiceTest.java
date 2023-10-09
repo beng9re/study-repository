@@ -1,4 +1,4 @@
-package com.example.springevent.step5_orderedEvent.actor;
+package com.example.springevent.step4_customTreadPool.actor;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,15 +6,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest
-class OrderedHelloServiceTest {
+class CustomThreadPoolHelloServiceTest {
 
     @Autowired
-    private OrderedHelloService orderedHelloService;
+    CustomThreadPoolHelloService customThreadPoolHelloService;
 
     @Test
-    void 순서에_대한_이벤트_처리() {
-        orderedHelloService.call();
+    void 커스텀_스레드풀_이벤트_처리() {
+        customThreadPoolHelloService.call();
     }
 }
