@@ -1,7 +1,6 @@
 package com.example.springevent.step1.actor;
 
 import com.example.springevent.step1.EchoEventPublish;
-import com.example.springevent.step2_asyncEvent.AsyncEchoEventPublish;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
